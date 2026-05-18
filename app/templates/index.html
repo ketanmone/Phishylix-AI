@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Phishylix AI</title>
+
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #14213d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1050px;
+  margin: 45px auto;
+  padding: 20px;
+}
+
+/* =========================
+   HERO + FORM CARDS
+========================= */
+
+.hero,
+.form-card {
+  background: white;
+  padding: 34px;
+  border-radius: 26px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.brand-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f7fb;
+  border-radius: 22px;
+  padding: 18px;
+  margin-bottom: 22px;
+}
+
+.app-logo {
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1 {
+  margin-top: 0;
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.subtitle {
+  color: #52616b;
+  line-height: 1.7;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-card {
+  margin-top: 26px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+input {
+  width: 100%;
+  padding: 16px;
+  margin: 12px 0 20px;
+  border: 1px solid #d9e2ec;
+  border-radius: 14px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #14213d;
+  box-shadow: 0 0 0 4px rgba(20,33,61,0.08);
+}
+
+button {
+  padding: 15px 26px;
+  background: linear-gradient(135deg, #14213d, #243b63);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 22px rgba(20,33,61,0.18);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   RESULT CARD
+========================= */
+
+.result-card {
+  margin-top: 28px;
+  padding: 32px;
+  border-radius: 26px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+}
+
+/* SAFE */
+
+.safe {
+  background: linear-gradient(180deg, #edfdf3, #e4f8eb);
+  border-left: 8px solid #198754;
+}
+
+/* DANGER */
+
+.danger {
+  background: linear-gradient(180deg, #fff1f1, #fde7e7);
+  border-left: 8px solid #dc3545;
+}
+
+.result-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.metric {
+  background: rgba(255,255,255,0.84);
+  padding: 20px;
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+}
+
+.metric span {
+  display: block;
+  color: #52616b;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.metric strong {
+  font-size: 22px;
+}
+
+/* =========================
+   ALERT LINE
+========================= */
+
+.alert-line {
+  margin-top: 24px;
+  padding: 20px;
+  background: rgba(255,255,255,0.76);
+  border-radius: 18px;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* =========================
+   REPORT BUTTON
+========================= */
+
+.report-button {
+  margin-top: 24px;
+  padding: 14px 20px;
+  background: #14213d;
+  color: white;
+  border-radius: 14px;
+  cursor: pointer;
+  border: none;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: rgba(20,33,61,0.68);
+  top: 0;
+  left: 0;
+}
+
+.modal-box {
+  background: white;
+  width: min(1000px, 92%);
+  max-height: 85vh;
+  overflow-y: auto;
+  margin: 50px auto;
+  padding: 32px;
+  border-radius: 28px;
+  box-shadow: 0 20px 55px rgba(0,0,0,0.18);
+}
+
+.close-button {
+  background: #dc3545;
+  color: white;
+  border-radius: 12px;
+  padding: 12px 18px;
+  cursor: pointer;
+  margin-top: 18px;
+  border: none;
+}
+
+.low {
+  color: #198754;
+  font-weight: bold;
+}
+
+.medium {
+  color: #b58100;
+  font-weight: bold;
+}
+
+.high {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 768px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .app-logo {
+    width: 220px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+
+    <div class="brand-logo">
+      <img src="/static/images/phishylix-logo.png"
+           alt="Phishylix AI Logo"
+           class="app-logo">
+    </div>
+
+    <h1>Detect. Explain. Protect.</h1>
+
+    <p class="subtitle">
+      AI-powered detection system designed to identify AI-generated phishing webpages using intelligent machine-learning-based feature analysis.
+    </p>
+
+  </div>
+
+  <!-- FORM -->
+  <div class="form-card">
+
+    <form method="POST" enctype="multipart/form-data">
+
+      <label>Website URL</label>
+
+      <input
+        name="url"
+        placeholder="https://example.com">
+
+      <p style="text-align:center; font-size:18px;">OR</p>
+
+      <label>Upload HTML File</label>
+
+      <input
+        type="file"
+        name="html_file"
+        accept=".html">
+
+      <button type="submit">
+        Analyse Website
+      </button>
+
+    </form>
+
+  </div>
+
+  <!-- RESULT -->
+  {% if result %}
+
+  <div class="result-card {% if result == 'legitimate' %}safe{% else %}danger{% endif %}">
+
+    <div class="result-title">
+
+      {% if result == "legitimate" %}
+        Prediction: Safe
+      {% else %}
+        Prediction: High Risk
+      {% endif %}
+
+    </div>
+
+    <div class="grid">
+
+      <div class="metric">
+        <span>Confidence Score</span>
+        <strong>{{ confidence }}%</strong>
+      </div>
+
+      <div class="metric">
+        <span>Risk Level</span>
+        <strong>{{ risk_level }}</strong>
+      </div>
+
+      <div class="metric">
+        <span>Explainability Score</span>
+        <strong>{{ explain_score }}</strong>
+      </div>
+
+    </div>
+
+    <div class="alert-line">
+      {{ alert_message }}
+    </div>
+
+    {% if feature_report %}
+    <button class="report-button" onclick="openReport()">
+      View Detailed Report
+    </button>
+    {% endif %}
+
+  </div>
+
+  {% endif %}
+
+</div>
+
+<!-- MODAL -->
+
+{% if feature_report %}
+
+<div id="reportModal" class="modal-overlay">
+
+  <div class="modal-box">
+
+    <h2>Detailed Feature Report</h2>
+
+    {% for item in feature_report %}
+
+    <div style="padding:16px 0; border-bottom:1px solid #edf2f7;">
+
+      <p style="margin:0;">
+        <b>{{ item.feature }}</b>
+      </p>
+
+      <p style="margin:8px 0; color:#52616b;">
+        {{ item.description }}
+      </p>
+
+      <p style="margin:0;">
+        Value:
+        <b>{{ item.value }}</b>
+      </p>
+
+      <p style="margin-top:8px;">
+        Risk:
+        <span class="{{ item.risk | lower }}">
+          {{ item.risk }}
+        </span>
+      </p>
+
+    </div>
+
+    {% endfor %}
+
+    <button class="close-button" onclick="closeReport()">
+      Close
+    </button>
+
+  </div>
+
+</div>
+
+{% endif %}
+
+<script>
+
+function openReport() {
+  document.getElementById("reportModal").style.display = "block";
+}
+
+function closeReport() {
+  document.getElementById("reportModal").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

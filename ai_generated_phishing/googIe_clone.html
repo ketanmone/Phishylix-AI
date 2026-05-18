@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GoogIe Account Verification</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f1f3f4;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background: white;
+  width: 420px;
+  padding: 40px 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Fictional lookalike logo for academic simulation */
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.logo span:nth-child(1){color:#4285F4;} /* G */
+.logo span:nth-child(2){color:#DB4437;} /* O */
+.logo span:nth-child(3){color:#F4B400;} /* O */
+.logo span:nth-child(4){color:#4285F4;} /* G */
+.logo span:nth-child(5){color:#0F9D58;} /* I */
+.logo span:nth-child(6){color:#DB4437;} /* E */
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.subtitle {
+  color: #5f6368;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.alert {
+  background: #fff4e5;
+  border-left: 4px solid #fbbc04;
+  padding: 12px;
+  margin: 20px 0;
+  text-align: left;
+  font-size: 13px;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  margin-top: 12px;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 22px;
+  width: 100%;
+  padding: 13px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #1669c1;
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #d93025;
+}
+
+.small-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #5f6368;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+  <div class="card">
+
+    <div class="logo">
+      <span>G</span><span>o</span><span>o</span><span>g</span><span>I</span><span>e</span>
+    </div>
+
+    <h2>Sign in</h2>
+
+    <div class="subtitle">
+      Continue to GoogIe Secure Services
+    </div>
+
+    <div class="alert">
+      <strong>Security Alert:</strong> Suspicious activity detected on your account. Immediate verification required.
+    </div>
+
+    <form onsubmit="return false;">
+      <input type="email" placeholder="Email or phone" disabled>
+      <input type="password" placeholder="Enter your password" disabled>
+      <button type="button" disabled>Next</button>
+    </form>
+
+    <div class="small-note">
+      Verification may require OTP confirmation.
+    </div>
+
+    <div class="footer">
+      DEMO ONLY — Synthetic phishing-style page for academic use
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

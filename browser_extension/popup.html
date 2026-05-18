@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TrustGuard AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 🔥 LOGO SECTION -->
+  <div class="logo-wrapper">
+  <img src="images/phishylix-logo.png" alt="Phishylix AI Logo" class="extension-logo">
+</div>
+
+  <p class="subtitle">
+    Analyse webpages for AI-generated phishing risk.
+  </p>
+
+  <!-- ANALYSE BUTTON -->
+  <button id="analyseBtn">Analyse Current Page</button>
+
+  <!-- LOADING -->
+  <div id="loading" class="loading hidden">
+    Analysing page...
+  </div>
+
+  <!-- RESULT -->
+  <div id="resultBox" class="result hidden">
+
+    <h3 id="predictionText"></h3>
+
+    <!-- METRICS -->
+    <div class="metric">
+      <span>Confidence</span>
+      <strong id="confidenceText"></strong>
+    </div>
+
+    <div class="metric">
+      <span>Risk Level</span>
+      <strong id="riskText"></strong>
+    </div>
+
+    <p id="alertText" class="alert"></p>
+
+    <!-- REPORT BUTTON -->
+    <button id="reportBtn" class="secondary hidden">
+      View Detailed Report
+    </button>
+
+    <!-- REPORT BOX -->
+    <div id="reportBox" class="report hidden">
+      <h3>Detailed Feature Report</h3>
+      <p id="explainText"></p>
+      <div id="featureList"></div>
+    </div>
+
+  </div>
+
+  <!-- ERROR -->
+  <div id="errorBox" class="error hidden"></div>
+
+  <!-- FOOTER -->
+  <p class="note">
+    Ensure Flask is running at http://127.0.0.1:5000
+  </p>
+
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>

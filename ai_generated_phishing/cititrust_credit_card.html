@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CityTrust Card Verification</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: #ffffff;
+  width: 460px;
+  padding: 36px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #004f9f;
+  margin-bottom: 18px;
+}
+
+h2 {
+  margin: 0 0 10px;
+}
+
+p {
+  color: #5f6368;
+  line-height: 1.5;
+}
+
+.alert {
+  background: #fff4e5;
+  border-left: 5px solid #fbbc04;
+  padding: 12px;
+  margin: 20px 0;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #004f9f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+.demo {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #b00020;
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="card">
+    <div class="logo">CityTrust Bank</div>
+
+    <h2>Credit Card Verification Required</h2>
+
+    <p>Your card access has been temporarily restricted due to unusual activity.</p>
+
+    <div class="alert">
+      <strong>Urgent:</strong> Please verify your card profile within 24 hours to avoid account suspension.
+    </div>
+
+    <form onsubmit="return false;">
+      <input type="text" placeholder="Cardholder name" disabled>
+      <input type="text" placeholder="Card number" disabled>
+      <input type="text" placeholder="Expiry date" disabled>
+      <input type="password" placeholder="CVV" disabled>
+      <input type="text" placeholder="OTP" disabled>
+      <button type="button" disabled>Verify Card</button>
+    </form>
+
+    <p class="demo">
+      DEMO ONLY — Synthetic phishing-style page for academic use. No real brand, no credential collection.
+    </p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+{
+    "dataset_size": 112,
+    "train_size": 84,
+    "test_size": 28,
+    "class_distribution": {
+        "legitimate": 57,
+        "ai_generated_phishing": 55
+    },
+    "best_model": "Logistic Regression",
+    "results": {
+        "Logistic Regression": {
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "roc_auc": 1.0,
+            "classification_report": {
+                "legitimate": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 14.0
+                },
+                "ai_generated_phishing": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 14.0
+                },
+                "accuracy": 1.0,
+                "macro avg": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 28.0
+                },
+                "weighted avg": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 28.0
+                }
+            }
+        },
+        "Random Forest": {
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "roc_auc": 1.0,
+            "classification_report": {
+                "legitimate": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 14.0
+                },
+                "ai_generated_phishing": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 14.0
+                },
+                "accuracy": 1.0,
+                "macro avg": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 28.0
+                },
+                "weighted avg": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 28.0
+                }
+            }
+        },
+        "Gradient Boosting": {
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "roc_auc": 1.0,
+            "classification_report": {
+                "legitimate": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 14.0
+                },
+                "ai_generated_phishing": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 14.0
+                },
+                "accuracy": 1.0,
+                "macro avg": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 28.0
+                },
+                "weighted avg": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 28.0
+                }
+            }
+        }
+    },
+    "numeric_columns": [
+        "url_length",
+        "url_entropy",
+        "num_dots",
+        "num_hyphens",
+        "num_digits",
+        "num_slashes",
+        "num_query_params",
+        "has_https",
+        "has_ip_pattern",
+        "domain_length",
+        "is_known_trusted_domain",
+        "is_bank_in_domain",
+        "is_gov_in_domain",
+        "is_nic_in_domain",
+        "trusted_domain_strength",
+        "has_login_word_url",
+        "has_verify_word_url",
+        "has_secure_word_url",
+        "suspicious_url_word_count",
+        "num_forms",
+        "num_inputs",
+        "num_password_inputs",
+        "num_email_inputs",
+        "num_links",
+        "num_scripts",
+        "num_buttons",
+        "num_images",
+        "html_length",
+        "text_length",
+        "word_count",
+        "has_demo_watermark",
+        "suspicious_word_count",
+        "legitimate_service_word_count"
+    ]
+}
