@@ -63,3 +63,101 @@ Phishylix-AI/
 ├── app/
 ├── README.md
 └── requirements.txt
+```
+
+---
+
+## Machine-Learning Models
+
+The project evaluates multiple supervised machine-learning models, including:
+
+- Logistic Regression
+- Random Forest
+- Gradient Boosting
+
+The final deployed model was selected based on:
+
+- classification accuracy
+- explainability
+- computational efficiency
+- browser integration suitability
+
+---
+
+## Installation and Running
+
+Install required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Train the phishing-detection model:
+
+```bash
+python src/train_model.py
+```
+
+Run the Flask web application:
+
+```bash
+python src/web_app.py
+```
+
+Open the application in a browser:
+
+```text
+http://127.0.0.1:5000
+```
+
+---
+
+## Browser Extension
+
+The project includes a Google Chrome browser extension capable of analysing webpages in real time using the trained phishing-detection model.
+
+To load the extension:
+
+1. Open Chrome Extensions
+2. Enable Developer Mode
+3. Select “Load unpacked”
+4. Choose the `browser_extension` folder
+
+---
+
+## Evaluation
+
+The artefact was evaluated using:
+
+- Accuracy
+- Macro F1-score
+- ROC-AUC
+- Confusion Matrix Analysis
+- Real-world browser testing
+
+---
+
+## Ethical Disclaimer
+
+This project was developed strictly for academic and defensive cybersecurity research purposes.
+
+All phishing webpages used during experimentation were generated within controlled offline environments using synthetic or modified branding and non-functional interfaces. The artefact must not be used for malicious, deceptive or unauthorised activities.
+
+The research was conducted in accordance with ethical cybersecurity experimentation principles and focused solely on phishing detection and defensive analysis.
+
+---
+
+## Author
+
+Ketan Mone
+
+MSc Cyber Security  
+University of Essex Online
+
+---
+
+## Research Repository
+
+GitHub Repository:
+
+https://github.com/ketanmone/Phishylix-AI
